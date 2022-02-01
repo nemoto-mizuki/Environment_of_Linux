@@ -1,6 +1,6 @@
 # 環境構築手順など
 
-### swap領域の追加
+## swap領域の追加
 ```bash
 sudo fallocate -l 1G /swapfile
 ```
