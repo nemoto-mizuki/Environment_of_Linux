@@ -27,3 +27,35 @@ sudo swapon /swapfile
 ```bash
 sudo swapon --show
 ```
+## ホーム以下のディレクトリの英語化
+```bash
+LANG=C xdg-user-dirs-gtk-update
+```
+
+## cuda11.2のインストール
+
+#### 前準備
+関連ファイルやパッケージの削除
+```bash
+sudo apt --purge remove -y cuda* libcuda* nvidia* libnvidia* && sudo apt autoremove -y && sudo apt clean -y
+reboot
+```
+
+nvidia-driverのインストール
+```bash
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt update
+ubuntu-drivers devices
+sudo apt install nvidia-driver-495　（最新バージョン）
+reboot
+```
+cuda-11-2 toolkitのインストール
+```bash
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin
+sudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600
+wget https://developer.download.nvidia.com/compute/cuda/11.2.0/local_installers/cuda-repo-ubuntu2004-11-2-local_11.2.0-460.27.04-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu2004-11-2-local_11.2.0-460.27.04-1_amd64.deb
+sudo apt-key add /var/cuda-repo-ubuntu2004-11-2-local/7fa2af80.pub
+sudo apt-get update
+sudo apt-get -y install cuda-11-2
+```
