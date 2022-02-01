@@ -41,7 +41,7 @@ sudo apt --purge remove -y cuda* libcuda* nvidia* libnvidia* && sudo apt autorem
 reboot
 ```
 
-nvidia-driverのインストール
+#### nvidia-driverのインストール
 ```bash
 sudo add-apt-repository ppa:graphics-drivers/ppa
 sudo apt update
@@ -49,7 +49,7 @@ ubuntu-drivers devices
 sudo apt install nvidia-driver-495　（最新バージョン）
 reboot
 ```
-cuda-11-2 toolkitのインストール
+#### cuda-11-2 toolkitのインストール
 ```bash
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin
 sudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600
