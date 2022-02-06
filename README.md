@@ -85,3 +85,17 @@ sudo systemctl restart polkit
 sudo systemctl restart xrdp
 
 ```
+
+## Pip関連
+### バージョンアップ
+```bash
+pip install ––upgrade pip
+```
+### バージョンダウン
+```bash
+pip install --upgrade pip==9.0.3
+```
+### 再インストール
+```bash
+python -m ensurepip --default-pip
+```
